@@ -13,10 +13,12 @@
     "expo": "~42.0.1",
     "expo-localization": "~10.2.0",
     "expo-status-bar": "~1.0.4",
+    "firebase": "8.2.3",
     "i18n-js": "^3.8.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native-dotenv": "^3.2.0",
     "react-native-svg": "12.1.1",
     "react-native-web": "~0.13.12"
   },
