@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it works 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <RNCSafeAreaView>
+    <View
+      appearance="default"
+      onSelect={[Function]}
+      selectedIndex={0}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#FFFFFF",
+            "minHeight": 56,
+            "paddingVertical": 4,
+          },
+          Object {
+            "flexDirection": "row",
+          },
+          undefined,
+        ]
+      }
+    >
+      <View
+        onLayout={[Function]}
+        positions={2}
+        selectedPosition={0}
+        style={
+          Object {
+            "backgroundColor": "#3366FF",
+            "height": 4,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+            ],
+            "width": "50%",
+          }
+        }
+      />
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          appearance="default"
+          category="p1"
+          style={
+            Array [
+              Object {
+                "color": "#222B45",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+              },
+              Object {
+                "color": "#3366FF",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "600",
+                "marginVertical": 2,
+              },
+            ]
+          }
+        >
+          Home
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          appearance="default"
+          category="p1"
+          style={
+            Array [
+              Object {
+                "color": "#222B45",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+              },
+              Object {
+                "color": "#8F9BB3",
+                "fontFamily": "System",
+                "fontSize": 12,
+                "fontWeight": "600",
+                "marginVertical": 2,
+              },
+            ]
+          }
+        >
+          Test
+        </Text>
+      </View>
+    </View>
+  </RNCSafeAreaView>
+</View>
+`;

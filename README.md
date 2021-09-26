@@ -20,6 +20,26 @@ Starting development in iOS Simulator (xcode is required)
 yarn ios
 ```
 
+### Testing
+
+Full tests with coverage:
+
+```bash
+yarn test
+```
+
+Active development of tests, watch files for changes
+
+```bash
+yarn test:dev
+```
+
+When a screen/component is updated, the test snapshots will throw an error, this updates them:
+
+```bash
+yarn updateSnapshots
+```
+
 ### Dependencies
 
 Package | Description
