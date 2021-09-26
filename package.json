@@ -1,4 +1,23 @@
 {
+  "name": "expo-fire-kitten",
+  "version": "1.0.0",
+  "description": "Expo boilerplate with Login/Register ready (Firebase + UI Kitten)",
+  "keywords": [
+    "expo",
+    "boilerplate",
+    "firebase",
+    "ui-kitten"
+  ],
+  "author": "Vivo Xu <vivo@duapp.org>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duapp/expo-fire-kitten.git"
+  },
+  "bugs": {
+    "url": "https://github.com/duapp/expo-fire-kitten/issues"
+  },
+  "homepage": "https://github.com/duapp/expo-fire-kitten#readme",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
@@ -72,7 +91,6 @@
       "!**/jest.setup.js"
     ]
   },
-  "private": true,
   "lint-staged": {
     "*.{js,jsx}": "eslint --cache --fix"
   }

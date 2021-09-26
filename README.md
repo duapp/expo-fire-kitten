@@ -1,6 +1,18 @@
-# Expo + Firebase Auth + UI-kitten Starter Kit
+# Expo + Firebase Auth + UI Kitten Starter Kit
 
-This is a boilerplate for starting an Expo project with Login/Register
+This is a boilerplate for starting an Expo project with Login/Register flows ready
+
+## Features
+
+- [Expo](https://expo.dev) with JavaScript
+- [UI Kitten](https://akveo.github.io/react-native-ui-kitten/) as UI library
+- [Firebase](https://firebase.google.com) integration (No Analytics yet)
+- Localization (i18n) ready
+- `.env` Environment override
+- Easy form development by [Formik](https://formik.org) and [Yup](https://github.com/jquense/yup)
+- Linter and formatter by [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb) and [Prettier](https://prettier.io)
+- Testing support with `jest-expo` and [React Native Testing Library](https://github.com/callstack/react-native-testing-library)
+- GitHub CI workflow
 
 ## Requirement
 
@@ -17,6 +29,8 @@ FIREBASE_PROJECT_ID="project-id"
 FIREBASE_STORAGE_BUCKET="project-id.appspot.com"
 FIREBASE_MESSAGING_SENDER_ID="sender-id"
 ```
+
+Add Email/Password Sign-in provider in Firebase Authentication.
 
 ## Development
 
