@@ -1,3 +1,35 @@
 {
-  "homeTest": "HOME TEST"
+  "welcome": {
+    "login": "SIGN IN",
+    "register": "CREATE A NEW ACCOUNT",
+    "greeting": "Welcome! Please sign in to continue"
+  },
+  "register": {
+    "title": "Register",
+    "displayNameLabel": "Name",
+    "displayNameHint": "What's your name",
+    "emailLabel": "Email",
+    "emailHint": "Enter your email",
+    "emailError": "Please enter a valid email",
+    "passwordLabel": "Password",
+    "passwordHint": "Set a password",
+    "passwordError": "Password must have at least 6 characters",
+    "submit": "SIGN UP",
+    "cancel": "Cancel"
+  },
+  "login": {
+    "title": "Login",
+    "facebookLogin": "Log In With Facebook",
+    "appleLogin": "Sign In With Apple",
+    "emailLabel": "Email",
+    "emailHint": "Enter your email",
+    "emailError": "Please enter a valid email",
+    "passwordLabel": "Password",
+    "passwordHint": "Enter your password",
+    "submit": "SIGN IN"
+  },
+  "home": {
+    "logout": "Sign Out",
+    "test": "Test Button"
+  }
 }

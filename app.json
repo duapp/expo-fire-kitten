@@ -17,7 +17,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.fancyber.tinybar"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,7 +30,9 @@
       "favicon": "./assets/favicon.png",
       "build": {
         "babel": {
-          "include": [ "@ui-kitten/components" ]
+          "include": [
+            "@ui-kitten/components"
+          ]
         }
       }
     }
