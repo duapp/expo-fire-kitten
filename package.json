@@ -10,6 +10,7 @@
   "dependencies": {
     "@eva-design/eva": "^2.1.1",
     "@ui-kitten/components": "^5.1.1",
+    "@ui-kitten/eva-icons": "^5.1.1",
     "expo": "~42.0.1",
     "expo-localization": "~10.2.0",
     "expo-status-bar": "~1.0.4",

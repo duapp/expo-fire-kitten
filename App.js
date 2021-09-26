@@ -1,17 +1,19 @@
 import React from 'react';
 import * as eva from '@eva-design/eva';
-import { ApplicationProvider, Layout, Text } from '@ui-kitten/components';
+import { ApplicationProvider, IconRegistry, Layout, Text } from '@ui-kitten/components';
+import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import i18n from './config/i18n';
-import firebaseApp from './config/firebase';
 
 export default function App() {
-  console.log(firebaseApp);
   return (
-    <ApplicationProvider {...eva} theme={eva.light}>
-      <Layout style={styles.container}>
-        <Text category="h1">{i18n.t('homeTest')}</Text>
-      </Layout>
-    </ApplicationProvider>
+    <>
+      <IconRegistry icons={EvaIconsPack} />
+      <ApplicationProvider {...eva} theme={eva.light}>
+        <Layout style={styles.container}>
+          <Text category="h1">{i18n.t('homeTest')}</Text>
+        </Layout>
+      </ApplicationProvider>
+    </>
   );
 }
 
