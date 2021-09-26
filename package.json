@@ -5,11 +5,13 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "lint": "eslint",
     "build": "expo build:web",
     "test": "jest",
     "test:dev": "jest -o --watch --coverage=false",
     "updateSnapshots": "jest -u --coverage=false",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@eva-design/eva": "^2.1.1",
@@ -39,7 +41,18 @@
     "@babel/core": "^7.9.0",
     "@testing-library/jest-native": "^4.0.2",
     "@testing-library/react-native": "^7.2.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "husky": ">=6",
     "jest-expo": "^42.1.0",
+    "lint-staged": ">=10",
+    "prettier": "^2.4.1",
     "react-test-renderer": "^17.0.2"
   },
   "jest": {
@@ -59,5 +72,8 @@
       "!**/jest.setup.js"
     ]
   },
-  "private": true
+  "private": true,
+  "lint-staged": {
+    "*.{js,jsx}": "eslint --cache --fix"
+  }
 }
