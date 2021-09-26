@@ -14,6 +14,10 @@ This is a boilerplate for starting an Expo project with Login/Register flows rea
 - Testing support with `jest-expo` and [React Native Testing Library](https://github.com/callstack/react-native-testing-library)
 - GitHub CI workflow
 
+## Screenshots
+
+![Screenshots](https://user-images.githubusercontent.com/1279387/134822851-3aeeb7a0-4e34-4775-b285-605209333df2.png)
+
 ## Usage
 
 Run the following command to generate a new Expo repo using this template:
