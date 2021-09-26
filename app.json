@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "tinybar",
-    "slug": "tinybar",
+    "name": "expo-fire-kitten",
+    "slug": "expo-fire-kitten",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
