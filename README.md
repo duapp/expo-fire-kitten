@@ -14,6 +14,16 @@ This is a boilerplate for starting an Expo project with Login/Register flows rea
 - Testing support with `jest-expo` and [React Native Testing Library](https://github.com/callstack/react-native-testing-library)
 - GitHub CI workflow
 
+## Usage
+
+Run the following command to generate a new Expo repo using this template:
+
+```bash
+expo init -t expo-fire-kitten
+```
+
+Feel free to update or remove top entires in your `package.json` as well :)
+
 ## Requirement
 
 ### Firebase Setup
