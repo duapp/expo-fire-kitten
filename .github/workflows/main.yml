@@ -1,0 +1,44 @@
+name: CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push event but only for the main branch
+  push:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "test"
+  test:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Setup Node environment
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+      - name: Setup Expo environment
+        uses: expo/expo-github-action@v6
+        with:
+          expo-version: 4.x
+      - name: Install dependencies
+        run: yarn
+      - name: Test the code with coverage
+        run: yarn test
+      - name: Build release artifact
+        run: yarn build
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: web-release
+          path: |
+            web-build
+            package.json
+            app.json
