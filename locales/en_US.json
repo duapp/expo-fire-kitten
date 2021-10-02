@@ -1,4 +1,7 @@
 {
+  "common": {
+    "ok": "OK"
+  },
   "welcome": {
     "login": "SIGN IN",
     "register": "CREATE A NEW ACCOUNT",

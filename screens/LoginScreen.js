@@ -1,12 +1,13 @@
 import { Button, Layout } from '@ui-kitten/components';
 import { Formik } from 'formik';
 import React from 'react';
-import { Alert, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Yup from 'yup';
 import TopNavigationBar from '../components/common/TopNavigationBar';
 import TextField from '../components/form/TextField';
 import { AuthService } from '../providers/AuthProvider';
+import { useModal } from '../providers/ModalProvider';
 import { t } from '../utils';
 
 const schema = Yup.object().shape({
@@ -14,9 +15,7 @@ const schema = Yup.object().shape({
     .required()
     .email(t('login.emailError'))
     .label(t('login.emailLabel')),
-  password: Yup.string()
-    .required()
-    .label(t('login.passwordLabel')),
+  password: Yup.string().required().label(t('login.passwordLabel')),
 });
 
 const initialValues = {
@@ -25,11 +24,12 @@ const initialValues = {
 };
 
 export default function LoginScreen() {
-  const handleFormSubmit = async ({ email, password}) => {
+  const { showModal } = useModal();
+  const handleFormSubmit = async ({ email, password }) => {
     try {
       await AuthService.signInWithEmailAndPassword(email, password);
     } catch ({ message }) {
-      Alert.alert('Error', message);
+      showModal(message);
     }
   };
 
@@ -72,7 +72,7 @@ export default function LoginScreen() {
       </Layout>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -89,5 +89,5 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 24,
-  }
+  },
 });

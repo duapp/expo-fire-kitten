@@ -39,6 +39,7 @@
     "@react-navigation/native-stack": "^6.1.0",
     "@ui-kitten/components": "^5.1.1",
     "@ui-kitten/eva-icons": "^5.1.1",
+    "eslint-plugin-jest": "^24.5.0",
     "expo": "~42.0.1",
     "expo-localization": "~10.2.0",
     "expo-status-bar": "~1.0.4",
@@ -88,10 +89,22 @@
       "!**/coverage/**",
       "!**/node_modules/**",
       "!**/babel.config.js",
-      "!**/jest.setup.js"
-    ]
+      "!**/jest.setup.js",
+      "!**/web-build/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 9,
+        "branches": 9,
+        "functions": 9,
+        "lines": 9
+      }
+    }
   },
   "lint-staged": {
-    "*.{js,jsx}": "eslint --cache --fix"
+    "*.{js,jsx}": [
+      "eslint --cache --fix",
+      "jest --bail --findRelatedTests"
+    ]
   }
 }

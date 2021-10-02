@@ -1,20 +1,32 @@
 import React from 'react';
-import { render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import BottomTabBar from './BottomTabBar';
 import { TestRoot } from '../../utils/testing';
 
 const mockState = {
   index: 0,
-  routeNames: ['Home']
+  routeNames: ['Home', 'Test'],
 };
 
 test('it works', () => {
-  const { getByText, toJSON } = render(
+  const props = {
+    navigation: {
+      navigate: jest.fn(),
+    },
+    state: mockState,
+  };
+  const { getByText /* , toJSON */ } = render(
     <TestRoot>
-      <BottomTabBar state={mockState} />
-    </TestRoot>
+      <BottomTabBar navigation={props.navigation} state={props.state} />
+    </TestRoot>,
   );
 
-  expect(getByText('Home')).toBeEnabled();
-  expect(toJSON()).toMatchSnapshot();
+  // thorough tests do not need snapshot testing
+  // expect(toJSON()).toMatchSnapshot();
+
+  const otherTab = getByText('Test');
+  expect(otherTab).toBeEnabled();
+
+  fireEvent.press(otherTab);
+  expect(props.navigation.navigate).toBeCalledWith(mockState.routeNames[1]);
 });

@@ -13,3 +13,6 @@ coverage
 
 # macOS
 .DS_Store
+
+# https://github.com/facebook/create-react-app/issues/10161
+.eslintcache

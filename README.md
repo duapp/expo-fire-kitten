@@ -7,6 +7,7 @@ This is a boilerplate for starting an Expo project with Login/Register flows rea
 - [Expo](https://expo.dev) with JavaScript
 - [UI Kitten](https://akveo.github.io/react-native-ui-kitten/) as UI library
 - [Firebase](https://firebase.google.com) integration (No Analytics yet)
+- [React Navigation](https://reactnavigation.org) stack and bottom tab examples
 - Localization (i18n) ready
 - `.env` Environment override
 - Easy form development by [Formik](https://formik.org) and [Yup](https://github.com/jquense/yup)

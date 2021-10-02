@@ -1,18 +1,17 @@
 import { Button, Layout } from '@ui-kitten/components';
 import { Formik } from 'formik';
 import React from 'react';
-import { Alert, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Yup from 'yup';
 import TopNavigationBar from '../components/common/TopNavigationBar';
 import TextField from '../components/form/TextField';
 import { AuthService } from '../providers/AuthProvider';
+import { useModal } from '../providers/ModalProvider';
 import { t } from '../utils';
 
 const schema = Yup.object().shape({
-  displayName: Yup.string()
-    .required()
-    .label(t('register.displayNameLabel')),
+  displayName: Yup.string().required().label(t('register.displayNameLabel')),
   email: Yup.string()
     .required()
     .email(t('register.emailError'))
@@ -30,12 +29,16 @@ const initialValues = {
 };
 
 export default function RegisterScreen() {
-  const handleFormSubmit = async ({ displayName, email, password}) => {
+  const { showModal } = useModal();
+  const handleFormSubmit = async ({ displayName, email, password }) => {
     try {
-      const result = await AuthService.createUserWithEmailAndPassword(email, password);
+      const result = await AuthService.createUserWithEmailAndPassword(
+        email,
+        password,
+      );
       await result.user.updateProfile({ displayName });
     } catch ({ message }) {
-      Alert.alert('Error', message);
+      showModal(message);
     }
   };
 
@@ -87,7 +90,7 @@ export default function RegisterScreen() {
       </Layout>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -107,5 +110,5 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 24,
-  }
+  },
 });

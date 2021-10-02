@@ -5,7 +5,7 @@
     "prettier",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["react", "prettier"],
+  "plugins": ["react", "prettier", "jest"],
   "rules": {
     "import/no-unresolved": 0,
     "react/jsx-filename-extension": [1, {
@@ -27,5 +27,8 @@
     "import/extensions": ["error", "never"],
     "react/prop-types": 0,
     "no-shadow": "off"
+  },
+  "env": {
+    "jest/globals": true
   }
 }
