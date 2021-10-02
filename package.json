@@ -27,7 +27,7 @@
     "lint": "eslint",
     "build": "expo build:web",
     "test": "jest",
-    "test:dev": "jest -o --watch --coverage=false",
+    "test:dev": "jest -o --watch",
     "updateSnapshots": "jest -u --coverage=false",
     "eject": "expo eject",
     "prepare": "husky install"
@@ -81,7 +81,8 @@
       "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*)"
     ],
     "setupFilesAfterEnv": [
-      "@testing-library/jest-native/extend-expect"
+      "@testing-library/jest-native/extend-expect",
+      "./jest.setup.js"
     ],
     "collectCoverage": true,
     "collectCoverageFrom": [
@@ -94,10 +95,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "statements": 9,
-        "branches": 9,
-        "functions": 9,
-        "lines": 9
+        "statements": 50,
+        "branches": 50,
+        "functions": 50,
+        "lines": 50
       }
     }
   },

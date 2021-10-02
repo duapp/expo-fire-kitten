@@ -1,5 +1,5 @@
-import { Layout, Spinner } from '@ui-kitten/components';
 import React, { createContext, useEffect, useState } from 'react';
+import Loader from '../components/common/Loader';
 import firebase from '../config/firebase';
 
 export const AuthContext = createContext({});
@@ -11,33 +11,42 @@ export function AuthProvider(props) {
   const [authPending, setAuthPending] = useState(true);
 
   useEffect(() => {
-    return AuthService.onAuthStateChanged(user => {
-      if (user) {
-        user.getIdTokenResult().then(({ claims }) => {
-          user.isAdmin = Boolean(claims.admin);
-          setUser(user);
+    return AuthService.onAuthStateChanged(result => {
+      if (result) {
+        const { displayName, email, uid, photoURL, phoneNumber } = result;
+        const currentUser = {
+          displayName,
+          email,
+          uid,
+          photoURL,
+          phoneNumber,
+        };
+        // read claims if necessary
+        result.getIdTokenResult().then(({ claims }) => {
+          currentUser.isAdmin = Boolean(claims.admin);
+          setUser(currentUser);
           setAuthPending(false);
         });
       } else {
-        setUser(user);
+        setUser();
         setAuthPending(false);
       }
     });
   }, []);
 
+  const { children } = props;
+
   if (authPending) {
-    return (
-      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Spinner size="large" />
-      </Layout>
-    );
+    return <Loader />;
   }
 
   return (
-    <AuthContext.Provider value={{
-      user,
-    }}>
-      {props.children}
+    <AuthContext.Provider
+      value={{
+        user,
+      }}
+    >
+      {children}
     </AuthContext.Provider>
   );
-};
+}

@@ -32,6 +32,7 @@
     "submit": "SIGN IN"
   },
   "home": {
+    "title": "Expo Fire Kitten - %{name}",
     "logout": "Sign Out",
     "test": "Test Button"
   }

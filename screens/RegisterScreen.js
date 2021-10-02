@@ -1,14 +1,13 @@
-import { Button, Layout } from '@ui-kitten/components';
+import { Button } from '@ui-kitten/components';
 import { Formik } from 'formik';
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Yup from 'yup';
-import TopNavigationBar from '../components/common/TopNavigationBar';
 import TextField from '../components/form/TextField';
 import { AuthService } from '../providers/AuthProvider';
 import { useModal } from '../providers/ModalProvider';
 import { t } from '../utils';
+import Screen from './Screen';
 
 const schema = Yup.object().shape({
   displayName: Yup.string().required().label(t('register.displayNameLabel')),
@@ -43,64 +42,56 @@ export default function RegisterScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <TopNavigationBar title={t('register.title')} showBackIcon />
-      <Layout style={styles.layout}>
-        <Formik
-          style={styles.form}
-          validationSchema={schema}
-          initialValues={initialValues}
-          onSubmit={handleFormSubmit}
-        >
-          {({ handleSubmit, isSubmitting }) => (
-            <>
-              <TextField
-                name="displayName"
-                style={styles.field}
-                label={t('register.displayNameLabel')}
-                placeholder={t('register.displayNameHint')}
-                disabled={isSubmitting}
-              />
-              <TextField
-                name="email"
-                style={styles.field}
-                label={t('register.emailLabel')}
-                placeholder={t('register.emailHint')}
-                disabled={isSubmitting}
-              />
-              <TextField
-                name="password"
-                style={styles.field}
-                label={t('register.passwordLabel')}
-                placeholder={t('register.passwordHint')}
-                disabled={isSubmitting}
-                password
-              />
-              <Button
-                style={styles.button}
-                status="primary"
-                onPress={handleSubmit}
-                disabled={isSubmitting}
-              >
-                {t('register.submit')}
-              </Button>
-            </>
-          )}
-        </Formik>
-      </Layout>
-    </SafeAreaView>
+    <Screen title={t('register.title')} showBackIcon>
+      <Formik
+        style={styles.form}
+        validationSchema={schema}
+        initialValues={initialValues}
+        onSubmit={handleFormSubmit}
+      >
+        {({ handleSubmit, isSubmitting }) => (
+          <>
+            <TextField
+              testID="name-input"
+              name="displayName"
+              style={styles.field}
+              label={t('register.displayNameLabel')}
+              placeholder={t('register.displayNameHint')}
+              disabled={isSubmitting}
+            />
+            <TextField
+              testID="email-input"
+              name="email"
+              style={styles.field}
+              label={t('register.emailLabel')}
+              placeholder={t('register.emailHint')}
+              disabled={isSubmitting}
+            />
+            <TextField
+              testID="password-input"
+              name="password"
+              style={styles.field}
+              label={t('register.passwordLabel')}
+              placeholder={t('register.passwordHint')}
+              disabled={isSubmitting}
+              password
+            />
+            <Button
+              style={styles.button}
+              status="primary"
+              onPress={handleSubmit}
+              disabled={isSubmitting}
+            >
+              {t('register.submit')}
+            </Button>
+          </>
+        )}
+      </Formik>
+    </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  layout: {
-    flex: 1,
-    paddingVertical: 24,
-    paddingHorizontal: 16,
-  },
   form: {
     flex: 1,
     marginTop: 48,

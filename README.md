@@ -81,9 +81,16 @@ import { t } from '../utils';
 <Text>{t('login.title')}</Text>
 ```
 
+Read object under `path` of Firebase Realtime Database:
+
+```jsx
+import { read } from '../utils';
+read(path).then(obj => console.log(obj));
+```
+
 ### Testing
 
-Full tests with coverage:
+Full tests with coverage (threshold 50%):
 
 ```bash
 yarn test
