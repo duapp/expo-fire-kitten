@@ -44,7 +44,6 @@ export default function RegisterScreen() {
   return (
     <Screen title={t('register.title')} showBackIcon>
       <Formik
-        style={styles.form}
         validationSchema={schema}
         initialValues={initialValues}
         onSubmit={handleFormSubmit}
@@ -92,10 +91,6 @@ export default function RegisterScreen() {
 }
 
 const styles = StyleSheet.create({
-  form: {
-    flex: 1,
-    marginTop: 48,
-  },
   field: {
     marginBottom: 16,
   },

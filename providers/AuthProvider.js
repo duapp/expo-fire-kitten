@@ -20,8 +20,10 @@ export function AuthProvider(props) {
           uid,
           photoURL,
           phoneNumber,
+          isAdmin: false,
         };
         // read claims if necessary
+        setAuthPending(true);
         result.getIdTokenResult().then(({ claims }) => {
           currentUser.isAdmin = Boolean(claims.admin);
           setUser(currentUser);

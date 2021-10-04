@@ -19,20 +19,23 @@ Screen.defaultProps = {
 
 export default function Screen({ title, showBackIcon, style, children }) {
   return (
-    <SafeAreaView style={styles.container}>
-      {title && <TopNavigationBar title={title} showBackIcon={showBackIcon} />}
-      <Layout style={[styles.layout, style]}>{children}</Layout>
-    </SafeAreaView>
+    <Layout style={styles.root}>
+      {title && (
+        <SafeAreaView>
+          <TopNavigationBar title={title} showBackIcon={showBackIcon} />
+        </SafeAreaView>
+      )}
+      <Layout style={[styles.container, style]}>{children}</Layout>
+    </Layout>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  root: {
     flex: 1,
   },
-  layout: {
+  container: {
     flex: 1,
-    paddingVertical: 24,
     paddingHorizontal: 16,
   },
 });

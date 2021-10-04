@@ -35,7 +35,6 @@ export default function LoginScreen() {
   return (
     <Screen title={t('login.title')} showBackIcon>
       <Formik
-        style={styles.form}
         validationSchema={schema}
         initialValues={initialValues}
         onSubmit={handleFormSubmit}
@@ -75,10 +74,6 @@ export default function LoginScreen() {
 }
 
 const styles = StyleSheet.create({
-  form: {
-    flex: 1,
-    marginTop: 48,
-  },
   field: {
     marginBottom: 16,
   },
