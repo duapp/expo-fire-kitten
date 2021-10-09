@@ -1,6 +1,6 @@
 {
   "name": "expo-fire-kitten",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Expo boilerplate with Login/Register ready (Firebase + UI Kitten)",
   "keywords": [
     "expo",
@@ -105,7 +105,7 @@
   "lint-staged": {
     "*.{js,jsx}": [
       "eslint --cache --fix",
-      "jest --bail --findRelatedTests"
+      "jest --coverage=false --bail --findRelatedTests"
     ]
   }
 }

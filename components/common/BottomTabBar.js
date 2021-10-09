@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function BottomTabBar({ navigation, state }) {
   return (
-    <SafeAreaView>
+    <SafeAreaView edges={['bottom']}>
       <BottomNavigation
         selectedIndex={state.index}
         onSelect={index => navigation.navigate(state.routeNames[index])}
@@ -14,4 +14,4 @@ export default function BottomTabBar({ navigation, state }) {
       </BottomNavigation>
     </SafeAreaView>
   );
-};
+}

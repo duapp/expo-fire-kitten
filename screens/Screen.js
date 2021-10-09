@@ -1,41 +1,42 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import PropTypes from 'prop-types';
-import { Layout } from '@ui-kitten/components';
+import { Layout, StyleService, useStyleSheet } from '@ui-kitten/components';
 import TopNavigationBar from '../components/common/TopNavigationBar';
 
 Screen.propTypes = {
   title: PropTypes.string,
   showBackIcon: PropTypes.bool,
   style: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
+  dark: PropTypes.bool,
 };
 
 Screen.defaultProps = {
   title: undefined,
   showBackIcon: false,
   style: undefined,
+  dark: false,
 };
 
-export default function Screen({ title, showBackIcon, style, children }) {
+export default function Screen({ title, showBackIcon, style, dark, children }) {
+  const styles = useStyleSheet(themedStyles);
   return (
-    <Layout style={styles.root}>
-      {title && (
-        <SafeAreaView>
-          <TopNavigationBar title={title} showBackIcon={showBackIcon} />
-        </SafeAreaView>
-      )}
-      <Layout style={[styles.container, style]}>{children}</Layout>
-    </Layout>
+    <SafeAreaView edges={['left', 'top', 'right']} style={styles.root}>
+      {title && <TopNavigationBar title={title} showBackIcon={showBackIcon} />}
+      <Layout style={[styles.container, style]} level={dark ? '4' : '1'}>
+        {children}
+      </Layout>
+    </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
+const themedStyles = StyleService.create({
   root: {
     flex: 1,
+    backgroundColor: 'background-basic-color-1',
   },
   container: {
     flex: 1,
-    paddingHorizontal: 16,
+    padding: 16,
   },
 });

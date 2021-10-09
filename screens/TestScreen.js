@@ -8,8 +8,9 @@ export default function TestScreen() {
     <Screen
       title={t('home.title', { name: 'Test' })}
       style={{ justifyContent: 'center', alignItems: 'center' }}
+      dark
     >
-      <Text category="h1">{t('home.test')}</Text>
+      <Text category="h1">{t('home.test2')}</Text>
     </Screen>
   );
 }
